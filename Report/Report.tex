@@ -1,0 +1,165 @@
+\documentclass[11pt,a4paper]{article}
+
+% --------------------
+% Packages
+% --------------------
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+% --------------------
+% Title Information
+% --------------------
+\title{\textbf{CS-736: Mathematical Imaging and Image Reconstruction}\\
+Assignment -- X-Ray Computed Tomography}
+\author{
+Arshit Singh\\
+\texttt{(Roll Number / Entry Number)}}
+\date{Instructor: Suyash P. Awate\\ \vspace{0.2cm} \today}
+
+% --------------------
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% ============================================================
+\section*{Question 1: X-Ray Computed Tomography -- Radon Transform}
+% ============================================================
+
+\subsection*{Objective}
+
+The objective of this problem is to implement the Radon transform of a 2D image by numerically approximating line integrals at multiple projection angles and offsets, and to analyze the effects of discretization and sampling choices on the resulting sinograms.
+
+\vspace{0.3cm}
+
+% ------------------------------------------------------------
+\subsection*{(a) X-ray Line Integration}
+% ------------------------------------------------------------
+
+Given an image $f(x,y)$ defined on a discrete grid, the Radon transform is defined as
+\[
+\mathcal{R}f(t,\theta)
+=
+\int_{-\infty}^{\infty}
+f(x,y)\,
+\delta(x\cos\theta + y\sin\theta - t)\,dx\,dy.
+\]
+
+Using a parametric representation of the line
+\[
+\begin{aligned}
+x(s) &= t\cos\theta - s\sin\theta, \\
+y(s) &= t\sin\theta + s\cos\theta,
+\end{aligned}
+\]
+the transform can be written as
+\[
+\mathcal{R}f(t,\theta)
+=
+\int_{-\infty}^{\infty}
+f(x(s), y(s))\,ds.
+\]
+
+Since the image is discrete, this integral is approximated using a summation:
+\[
+\mathcal{R}f(t,\theta)
+\approx
+\sum_{k} f(x(s_k), y(s_k))\,\Delta s,
+\]
+where $\Delta s$ is the sampling step size along the ray.
+
+\paragraph{Choice of $\Delta s$.}
+The Radon transform is computed using $\Delta s = 0.5$, $1.0$, and $3.0$ pixel-width units. Smaller values provide better numerical accuracy at the expense of higher computational cost, while larger values lead to undersampling and approximation errors.
+
+\paragraph{Interpolation scheme.}
+Bilinear interpolation is used to evaluate image intensities at off-grid locations. This choice offers a good trade-off between accuracy and computational efficiency while preserving linearity of the transform. Pixels outside the image domain are assigned zero intensity.
+
+% ------------------------------------------------------------
+\subsection*{(b) Discrete Radon Transform}
+% ------------------------------------------------------------
+
+Using the integration function from part (a), the Radon transform is computed for the discrete sets
+\[
+t = -90, -85, \ldots, 85, 90,
+\quad
+\theta = 0, 5, 10, \ldots, 175.
+\]
+
+For each pair $(t,\theta)$, numerical integration is performed along the corresponding line to obtain a discrete sinogram.
+
+\vspace{0.3cm}
+
+% ---------- FIGURE PLACEHOLDER ----------
+\begin{figure}[H]
+\centering
+\fbox{\parbox[c][6cm][c]{0.8\textwidth}{\centering
+\textbf{Placeholder: Radon transform (sinogram)}\\
+$\Delta s = 1.0$, $t \in [-90,90]$, $\theta \in [0,175]$
+}}
+\caption{Discrete Radon transform of the Shepp--Logan phantom.}
+\label{fig:radon_basic}
+\end{figure}
+% --------------------------------------
+
+% ------------------------------------------------------------
+\subsection*{(c) Effect of Integration Step Size}
+% ------------------------------------------------------------
+
+Radon-transform images are computed for three different step sizes: $\Delta s = 0.5$, $1.0$, and $3.0$ pixel-width units.
+
+\paragraph{1D Radon profiles.}
+For $\theta = 0^\circ$ and $\theta = 90^\circ$, the 1D Radon profiles computed with $\Delta s = 0.5$ appear the smoothest, while those computed with $\Delta s = 3.0$ appear the roughest due to undersampling along the integration direction.
+
+% ---------- FIGURE PLACEHOLDER ----------
+\begin{figure}[H]
+\centering
+\fbox{\parbox[c][6cm][c]{0.85\textwidth}{\centering
+\textbf{Placeholder: 1D Radon profiles}\\
+$\theta = 0^\circ$ and $90^\circ$ for different $\Delta s$
+}}
+\caption{Comparison of 1D Radon-transform profiles for different integration step sizes.}
+\label{fig:radon_1d}
+\end{figure}
+% --------------------------------------
+
+\paragraph{2D Radon-transform images.}
+The Radon-transform image corresponding to $\Delta s = 0.5$ is the smoothest, while the image corresponding to $\Delta s = 3.0$ shows visible artifacts and loss of detail.
+
+% ---------- FIGURE PLACEHOLDER ----------
+\begin{figure}[H]
+\centering
+\fbox{\parbox[c][6cm][c]{0.9\textwidth}{\centering
+\textbf{Placeholder: Radon images for}\\
+$\Delta s = 0.5,\; 1.0,\; 3.0$
+}}
+\caption{Effect of integration step size on the Radon-transform image.}
+\label{fig:radon_ds}
+\end{figure}
+% --------------------------------------
+
+% ------------------------------------------------------------
+\subsection*{(d) CT Scanner Parameter Design}
+% ------------------------------------------------------------
+
+In designing an X-ray CT scanner, smaller values of $\Delta t$ and $\Delta \theta$ are preferred to ensure dense spatial and angular sampling. Smaller $\Delta t$ improves spatial resolution, while smaller $\Delta \theta$ reduces angular undersampling artifacts. However, smaller values increase acquisition time, radiation dose, and storage requirements, leading to a trade-off between image quality and practical constraints.
+
+% ------------------------------------------------------------
+\subsection*{(e) ART Reconstruction Considerations}
+% ------------------------------------------------------------
+
+\paragraph{Choice of pixel grid.}
+The pixel size should be chosen small enough to capture anatomical details but large enough to avoid an excessively ill-conditioned reconstruction problem.
+
+\paragraph{Effect of $\Delta s$.}
+Choosing $\Delta s \gg 1$ pixel width leads to inaccurate ray–pixel interactions and degraded reconstructions, while choosing $\Delta s \ll 1$ pixel width improves accuracy but increases computational cost with diminishing returns.
+
+% ============================================================
+\end{document}
