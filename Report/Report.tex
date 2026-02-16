@@ -242,22 +242,14 @@ The relative root-mean-squared error (RRMSE) was computed between each ground-tr
 
 The computed RRMSE values for the three cases are:
 \[
-\text{RRMSE}(S_0, R_0) = 0.6529,
+\text{RRMSE}(S_0, R_0) = 0.0262,
 \quad
-\text{RRMSE}(S_1, R_1) = 0.6612,
+\text{RRMSE}(S_1, R_1) = 0.0572,
 \quad
-\text{RRMSE}(S_5, R_5) = 0.7383.
+\text{RRMSE}(S_5, R_5) = 0.1739.
 \]
 
 Thus, the lowest reconstruction error occurs for the unblurred image $S_0$, while the highest reconstruction error occurs for the most blurred image $S_5$:
-
-\[
-\text{RRMSE}(S_0, R_0)
-<
-\text{RRMSE}(S_1, R_1)
-<
-\text{RRMSE}(S_5, R_5).
-\]
 
 This behavior can be explained theoretically using frequency-domain analysis. Image blur acts as a low-pass filter that removes high-frequency components corresponding to sharp edges and fine structural details. The Ram-Lak filter used in filtered backprojection attempts to restore high-frequency components during reconstruction. However, when the original image is blurred, these high-frequency components are permanently lost and cannot be recovered. As a result, reconstruction accuracy decreases and RRMSE increases with increasing blur.
 
@@ -419,7 +411,7 @@ The reconstructed image obtained using ART is shown below.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Report/images/Q4/Q4_ART_reconstruction.png}
+\includegraphics[width=0.8\textwidth]{Q4_Reconstructed.png}
 \caption{Reconstructed image using ART with noisy projection data.}
 \label{fig:q4_art_reconstruction}
 \end{figure}
@@ -433,17 +425,17 @@ The reconstruction successfully recovers the overall structure of the image desp
 The RRMSE was computed as a function of iteration number for different step-length values:
 
 \[
-\lambda = 0.1, 0.2, \ldots, 1.0.
+\lambda = 0, 0.1, 0.2, \ldots, 1.0.
 \]
 
 The convergence behavior is shown below.
 
-% \begin{figure}[H]
-% \centering
-% \includegraphics[width=0.8\textwidth]{Report/images/Q4/Q4_RRMSE_vs_iteration.png}
-% \caption{RRMSE as a function of iteration number for different values of step-length $\lambda$.}
-% \label{fig:q4_rrmse}
-% \end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Q4_RRMSE_lambda.png}
+\caption{RRMSE as a function of iteration number for different values of step-length $\lambda$.}
+\label{fig:q4_rrmse}
+\end{figure}
 
 \paragraph{Effect of step-length parameter.}
 

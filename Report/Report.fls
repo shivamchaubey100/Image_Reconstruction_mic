@@ -126,6 +126,12 @@ INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT .\Report.out
+INPUT .\Report.out
+INPUT Report.out
+INPUT Report.out
+INPUT .\Report.out
+INPUT .\Report.out
 OUTPUT Report.out
 OUTPUT Report.pdf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
@@ -249,7 +255,20 @@ INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
 INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
 INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
 INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
+INPUT .\Q4_Reconstructed.png
+INPUT .\Q4_Reconstructed.png
+INPUT .\Q4_Reconstructed.png
+INPUT .\Q4_Reconstructed.png
+INPUT .\Q4_Reconstructed.png
+INPUT .\Q4_Reconstructed.png
+INPUT .\Q4_Reconstructed.png
+INPUT .\Q4_RRMSE_lambda.png
+INPUT .\Q4_RRMSE_lambda.png
+INPUT .\Q4_RRMSE_lambda.png
+INPUT .\Q4_RRMSE_lambda.png
+INPUT .\Q4_RRMSE_lambda.png
+INPUT .\Q4_RRMSE_lambda.png
+INPUT .\Q4_RRMSE_lambda.png
 INPUT Report.aux
 INPUT .\Report.out
 INPUT .\Report.out
@@ -277,5 +296,3 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb

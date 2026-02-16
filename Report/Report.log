@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  16 FEB 2026 22:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  16 FEB 2026 22:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -300,7 +300,20 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count306
 \l__pdf_internal_box=\box57
-) (Report.aux)
+) (Report.aux
+
+LaTeX Warning: Label `fig:radon_basic' multiply defined.
+
+
+LaTeX Warning: Label `fig:radon_basic' multiply defined.
+
+
+LaTeX Warning: Label `fig:q3_best_chest' multiply defined.
+
+
+LaTeX Warning: Label `fig:q3_best_phantom' multiply defined.
+
+)
 \openout1 = `Report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
@@ -380,11 +393,12 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 31.
+(Report.out) (Report.out)
 \@outlinefile=\write3
 \openout3 = `Report.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
-(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
@@ -438,24 +452,24 @@ Package pdftex.def Info: Q2_original_vs_reconstruction.png  used on input line 2
 
 
 [6 <./Q2_Filter_comparison.png>]
-Overfull \hbox (6.65599pt too wide) in paragraph at lines 264--266
+Overfull \hbox (6.65599pt too wide) in paragraph at lines 256--258
 []\OT1/cmr/m/n/10.95 Therefore, re-con-struc-tion ac-cu-racy is high-est for the orig-i-nal im-age and de-creases pro-gres-sively
  []
 
 
-Overfull \hbox (14.09785pt too wide) in paragraph at lines 281--282
+Overfull \hbox (14.09785pt too wide) in paragraph at lines 273--274
 []\OT1/cmr/m/n/10.95 However, be-yond a cer-tain cut-off fre-quency, im-prove-ments be-come marginal. This demon-strates
  []
 
-<Q2_RRMSE_Plot.png, id=72, 416.2752pt x 312.2064pt>
+<Q2_RRMSE_Plot.png, id=72, 409.7709pt x 312.2064pt>
 File: Q2_RRMSE_Plot.png Graphic file (type png)
 <use Q2_RRMSE_Plot.png>
-Package pdftex.def Info: Q2_RRMSE_Plot.png  used on input line 286.
-(pdftex.def)             Requested size: 362.37569pt x 271.79364pt.
+Package pdftex.def Info: Q2_RRMSE_Plot.png  used on input line 278.
+(pdftex.def)             Requested size: 362.37569pt x 276.10495pt.
 
 
 [7 <./Q2_original_vs_reconstruction.png>]
-Overfull \hbox (2.31892pt too wide) in paragraph at lines 294--295
+Overfull \hbox (2.31892pt too wide) in paragraph at lines 286--287
  []\OT1/cmr/bx/n/10.95 Summary of ob-ser-va-tions.[] \OT1/cmr/m/n/10.95 These re-sults demon-strate that fil-tered back-pro-jec-tion ef-fec-tively
  []
 
@@ -465,15 +479,15 @@ Overfull \hbox (2.31892pt too wide) in paragraph at lines 294--295
 <Q3_RRMSE_vs_starting_angle_chestCT.png, id=90, 505.89pt x 228.3732pt>
 File: Q3_RRMSE_vs_starting_angle_chestCT.png Graphic file (type png)
 <use Q3_RRMSE_vs_starting_angle_chestCT.png>
-Package pdftex.def Info: Q3_RRMSE_vs_starting_angle_chestCT.png  used on input line 321.
+Package pdftex.def Info: Q3_RRMSE_vs_starting_angle_chestCT.png  used on input line 313.
 (pdftex.def)             Requested size: 362.37569pt x 163.58876pt.
 <Q3_RRMSE_vs_starting_angle_myPhantom.png, id=91, 505.89pt x 228.3732pt>
 File: Q3_RRMSE_vs_starting_angle_myPhantom.png Graphic file (type png)
 <use Q3_RRMSE_vs_starting_angle_myPhantom.png>
-Package pdftex.def Info: Q3_RRMSE_vs_starting_angle_myPhantom.png  used on input line 328.
+Package pdftex.def Info: Q3_RRMSE_vs_starting_angle_myPhantom.png  used on input line 320.
 (pdftex.def)             Requested size: 362.37569pt x 163.58876pt.
 
-Overfull \hbox (15.69269pt too wide) in paragraph at lines 333--334
+Overfull \hbox (15.69269pt too wide) in paragraph at lines 325--326
 \OT1/cmr/m/n/10.95 ranges pro-vide bet-ter cov-er-age of im-por-tant struc-tural in-for-ma-tion, re-sult-ing in lower re-con-struc-tion
  []
 
@@ -483,46 +497,42 @@ Overfull \hbox (15.69269pt too wide) in paragraph at lines 333--334
 <Q3_Best_reconstruction_chestCT.png, id=103, 425.6703pt x 212.4738pt>
 File: Q3_Best_reconstruction_chestCT.png Graphic file (type png)
 <use Q3_Best_reconstruction_chestCT.png>
-Package pdftex.def Info: Q3_Best_reconstruction_chestCT.png  used on input line 343.
+Package pdftex.def Info: Q3_Best_reconstruction_chestCT.png  used on input line 335.
 (pdftex.def)             Requested size: 362.37569pt x 180.88562pt.
 <Q3_Best_reconstruction_chestCT_neighbours.png, id=104, 854.2314pt x 133.6995pt>
 File: Q3_Best_reconstruction_chestCT_neighbours.png Graphic file (type png)
 <use Q3_Best_reconstruction_chestCT_neighbours.png>
-Package pdftex.def Info: Q3_Best_reconstruction_chestCT_neighbours.png  used on input line 350.
+Package pdftex.def Info: Q3_Best_reconstruction_chestCT_neighbours.png  used on input line 342.
 (pdftex.def)             Requested size: 362.37569pt x 56.71646pt.
 <Q3_Best_reconstruction_myPhantom.png, id=105, 425.6703pt x 212.4738pt>
 File: Q3_Best_reconstruction_myPhantom.png Graphic file (type png)
 <use Q3_Best_reconstruction_myPhantom.png>
-Package pdftex.def Info: Q3_Best_reconstruction_myPhantom.png  used on input line 357.
+Package pdftex.def Info: Q3_Best_reconstruction_myPhantom.png  used on input line 349.
 (pdftex.def)             Requested size: 362.37569pt x 180.88562pt.
 <Q3_Best_reconstruction_myPhantom_neighbours.png, id=106, 854.2314pt x 133.6995pt>
 File: Q3_Best_reconstruction_myPhantom_neighbours.png Graphic file (type png)
 <use Q3_Best_reconstruction_myPhantom_neighbours.png>
-Package pdftex.def Info: Q3_Best_reconstruction_myPhantom_neighbours.png  used on input line 364.
+Package pdftex.def Info: Q3_Best_reconstruction_myPhantom_neighbours.png  used on input line 356.
 (pdftex.def)             Requested size: 362.37569pt x 56.71646pt.
 
 
 [10 <./Q3_Best_reconstruction_chestCT.png> <./Q3_Best_reconstruction_chestCT_neighbours.png> <./Q3_Best_reconstruction_myPhantom.png>]
-
-LaTeX Warning: File `Report/images/Q4/Q4_ART_reconstruction.png' not found on input line 422.
-
-
-c:/Users/rishi/.vscode/MIC/Image_Reconstruction_mic/Report/Report.tex:422: Package pdftex.def Error: File `Report/images/Q4/Q4_ART_reconstruction.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.422 ...port/images/Q4/Q4_ART_reconstruction.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<Q4_Reconstructed.png, id=118, 854.2314pt x 488.5452pt>
+File: Q4_Reconstructed.png Graphic file (type png)
+<use Q4_Reconstructed.png>
+Package pdftex.def Info: Q4_Reconstructed.png  used on input line 414.
+(pdftex.def)             Requested size: 362.37569pt x 207.24504pt.
 
 
 [11 <./Q3_Best_reconstruction_myPhantom_neighbours.png>]
+<Q4_RRMSE_lambda.png, id=128, 499.3857pt x 395.3169pt>
+File: Q4_RRMSE_lambda.png Graphic file (type png)
+<use Q4_RRMSE_lambda.png>
+Package pdftex.def Info: Q4_RRMSE_lambda.png  used on input line 435.
+(pdftex.def)             Requested size: 362.37569pt x 286.85979pt.
 
-[12]
+
+[12 <./Q4_Reconstructed.png> <./Q4_RRMSE_lambda.png>]
 
 [13] (Report.aux)
  ***********
@@ -531,29 +541,23 @@ L3 programming layer <2024-08-30>
  ***********
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `Report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Report.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `Report.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12208 strings out of 473899
- 193973 string characters out of 5736315
- 587460 words of memory out of 5000000
- 34892 multiletter control sequences out of 15000+600000
- 566597 words of font info for 68 fonts, out of 8000000 for 9000
+ 12196 strings out of 473899
+ 192957 string characters out of 5736315
+ 588668 words of memory out of 5000000
+ 34876 multiletter control sequences out of 15000+600000
+ 566429 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,79p,818b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\rishi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Report.pdf (13 pages, 1482949 bytes).
+ <C:\Users\rishi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Report.pdf (13 pages, 1936008 bytes).
 PDF statistics:
  209 PDF objects out of 1000 (max. 8388607)
- 59 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 60 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
