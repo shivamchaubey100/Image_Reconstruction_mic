@@ -323,12 +323,12 @@ The variation of reconstruction error as a function of starting angle $\theta$ i
 \label{fig:q3_rrmse_chest}
 \end{figure}
 
-% \begin{figure}[H]
-% \centering
-% \includegraphics[width=0.8\textwidth]{Report/images/Q3/Q3_rrmse_myPhantom.png}
-% \caption{RRMSE as a function of starting angle $\theta$ for the myPhantom dataset.}
-% \label{fig:q3_rrmse_phantom}
-% \end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Q3_RRMSE_vs_starting_angle_myPhantom.png}
+\caption{RRMSE as a function of starting angle $\theta$ for the myPhantom dataset.}
+\label{fig:q3_rrmse_phantom}
+\end{figure}
 
 The plots show that reconstruction accuracy varies with the starting angle. Certain angular ranges provide better coverage of important structural information, resulting in lower reconstruction error.
 
@@ -345,16 +345,28 @@ For each dataset, the starting angle $\theta$ corresponding to the minimum RRMSE
 \label{fig:q3_best_chest}
 \end{figure}
 
-% \begin{figure}[H]
-% \centering
-% \includegraphics[width=0.8\textwidth]{Report/images/Q3/Q3_best_reconstruction_myPhantom.png}
-% \caption{Best reconstruction of the myPhantom dataset using the optimal angular range that minimizes RRMSE.}
-% \label{fig:q3_best_phantom}
-% \end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Q3_Best_reconstruction_chestCT_neighbours.png}
+\caption{Best reconstruction of the chestCT dataset using the optimal angular range that minimizes RRMSE.(its neighbours).}
+\label{fig:q3_best_chest}
+\end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Q3_Best_reconstruction_myPhantom.png}
+\caption{Best reconstruction of the myPhantom dataset using the optimal angular range that minimizes RRMSE.}
+\label{fig:q3_best_phantom}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Q3_Best_reconstruction_myPhantom_neighbours.png}
+\caption{Best reconstruction of the myPhantom dataset using the optimal angular range that minimizes RRMSE(its neighbours).}
+\label{fig:q3_best_phantom}
+\end{figure}
 For each dataset, the contiguous set of 151 angles corresponding to the minimum RRMSE should be selected for acquisition, as this range provides the most informative projections for accurate reconstruction.
 
-\newpage
 % ============================================================
 \section*{Question 4: Algebraic Reconstruction Technique (ART)}
 % ============================================================
@@ -405,30 +417,18 @@ and Gaussian noise with standard deviation equal to $5\%$ of the intensity range
 
 The reconstructed image obtained using ART is shown below.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{Report/images/Q4/Q4_ART_reconstruction.png}
-\caption{Reconstructed image using ART with noisy projection data.}
-\label{fig:q4_art_reconstruction}
-\end{figure}
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.8\textwidth]{Report/images/Q4/Q4_ART_reconstruction.png}
+% \caption{Reconstructed image using ART with noisy projection data.}
+% \label{fig:q4_art_reconstruction}
+% \end{figure}
 
 The reconstruction successfully recovers the overall structure of the image despite the presence of noise, demonstrating the robustness of ART.
 
 % ------------------------------------------------------------
 \subsection*{(b) Convergence Behavior and Effect of Step-Length}
 % ------------------------------------------------------------
-
-The reconstruction error was evaluated using the relative root-mean-squared error (RRMSE):
-
-\[
-\text{RRMSE}(x, \hat{x})
-=
-\frac{
-\sqrt{\sum_p (x(p) - \hat{x}(p))^2}
-}{
-\sqrt{\sum_p x(p)^2}
-}.
-\]
 
 The RRMSE was computed as a function of iteration number for different step-length values:
 
@@ -438,12 +438,12 @@ The RRMSE was computed as a function of iteration number for different step-leng
 
 The convergence behavior is shown below.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{Report/images/Q4/Q4_RRMSE_vs_iteration.png}
-\caption{RRMSE as a function of iteration number for different values of step-length $\lambda$.}
-\label{fig:q4_rrmse}
-\end{figure}
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.8\textwidth]{Report/images/Q4/Q4_RRMSE_vs_iteration.png}
+% \caption{RRMSE as a function of iteration number for different values of step-length $\lambda$.}
+% \label{fig:q4_rrmse}
+% \end{figure}
 
 \paragraph{Effect of step-length parameter.}
 

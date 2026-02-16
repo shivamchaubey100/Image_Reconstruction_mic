@@ -114,6 +114,9 @@ INPUT C:\Program Files\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT .\Report.aux
+INPUT .\Report.aux
+INPUT Report.aux
 OUTPUT Report.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -123,6 +126,12 @@ INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT .\Report.out
+INPUT .\Report.out
+INPUT Report.out
+INPUT Report.out
+INPUT .\Report.out
+INPUT .\Report.out
 OUTPUT Report.out
 OUTPUT Report.pdf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
@@ -211,6 +220,13 @@ INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
 INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
 INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
 INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
+INPUT .\Q3_RRMSE_vs_starting_angle_myPhantom.png
+INPUT .\Q3_RRMSE_vs_starting_angle_myPhantom.png
+INPUT .\Q3_RRMSE_vs_starting_angle_myPhantom.png
+INPUT .\Q3_RRMSE_vs_starting_angle_myPhantom.png
+INPUT .\Q3_RRMSE_vs_starting_angle_myPhantom.png
+INPUT .\Q3_RRMSE_vs_starting_angle_myPhantom.png
+INPUT .\Q3_RRMSE_vs_starting_angle_myPhantom.png
 INPUT .\Q3_Best_reconstruction_chestCT.png
 INPUT .\Q3_Best_reconstruction_chestCT.png
 INPUT .\Q3_Best_reconstruction_chestCT.png
@@ -218,7 +234,27 @@ INPUT .\Q3_Best_reconstruction_chestCT.png
 INPUT .\Q3_Best_reconstruction_chestCT.png
 INPUT .\Q3_Best_reconstruction_chestCT.png
 INPUT .\Q3_Best_reconstruction_chestCT.png
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
+INPUT .\Q3_Best_reconstruction_chestCT_neighbours.png
+INPUT .\Q3_Best_reconstruction_chestCT_neighbours.png
+INPUT .\Q3_Best_reconstruction_chestCT_neighbours.png
+INPUT .\Q3_Best_reconstruction_chestCT_neighbours.png
+INPUT .\Q3_Best_reconstruction_chestCT_neighbours.png
+INPUT .\Q3_Best_reconstruction_chestCT_neighbours.png
+INPUT .\Q3_Best_reconstruction_chestCT_neighbours.png
+INPUT .\Q3_Best_reconstruction_myPhantom.png
+INPUT .\Q3_Best_reconstruction_myPhantom.png
+INPUT .\Q3_Best_reconstruction_myPhantom.png
+INPUT .\Q3_Best_reconstruction_myPhantom.png
+INPUT .\Q3_Best_reconstruction_myPhantom.png
+INPUT .\Q3_Best_reconstruction_myPhantom.png
+INPUT .\Q3_Best_reconstruction_myPhantom.png
+INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
+INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
+INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
+INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
+INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
+INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
+INPUT .\Q3_Best_reconstruction_myPhantom_neighbours.png
 INPUT Report.aux
 INPUT .\Report.out
 INPUT .\Report.out
@@ -246,5 +282,3 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
