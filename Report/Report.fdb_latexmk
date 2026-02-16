@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1771241612.58117 "c:/Users/rishi/.vscode/MIC/Image_Reconstruction_mic/Report/Report.tex" "Report.pdf" "Report" 1771241613.9492 0
+["pdflatex"] 1771243915.5953 "c:/Users/rishi/.vscode/MIC/Image_Reconstruction_mic/Report/Report.tex" "Report.pdf" "Report" 1771243917.58788 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1095.tfm" 993062508 1460 8005ce585ff351dff78998923504da5e ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -97,7 +97,7 @@
   "Q1_1D_radon_profile_theta0.png" 1771241280 34902 be06c9bb26e165efe0a4c134ba8f65de ""
   "Q1_1D_radon_profile_theta90.png" 1771241291 37746 1775a437708a93a2f569ade86dc31651 ""
   "Q1_Discrete_Radon_transform.png" 1771241265 21230 865277b10646f0ef49a066853b3b2838 ""
-  "Q2_Filter_comparison.png" 1771236356 182856 a57b8d832a534c104109795e244bb073 ""
+  "Q2_Filter_comparison.png" 1771243914 178448 3e177ec7a136871eeb58b340ae28c51e ""
   "Q2_RRMSE_Plot.png" 1771236455 24880 7576b241456d6128cfb8e9f03722be2c ""
   "Q2_original_vs_reconstruction.png" 1771236968 531726 1ab413f827e0a3b8627b8037b8ece366 ""
   "Q3_Best_reconstruction_chestCT.png" 1771241411 90273 ffdfbacc3bf6e45369c829be26b0efe3 ""
@@ -106,8 +106,8 @@
   "Q3_Best_reconstruction_myPhantom_neighbours.png" 1771241483 67986 753b70050ee93705d6ab5e7250361cc0 ""
   "Q3_RRMSE_vs_starting_angle_chestCT.png" 1771241400 31145 0da1afc8052bb8713685b30f116cc733 ""
   "Q3_RRMSE_vs_starting_angle_myPhantom.png" 1771241447 32916 2e44e4d0457cd1f3a2ba39af14dbf90c ""
-  "Report.aux" 1771241613 6099 7bbade948f051d95a9330d74582b2c65 "pdflatex"
-  "Report.out" 1771241613 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Report.aux" 1771243917 6099 7bbade948f051d95a9330d74582b2c65 "pdflatex"
+  "Report.out" 1771243916 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "Report.tex" 1771241611 22995 8e4032e318135bd4e13a6cb865afb245 ""
   "c:/Users/rishi/.vscode/MIC/Image_Reconstruction_mic/Report/Report.tex" 1771241611 22995 8e4032e318135bd4e13a6cb865afb245 ""
   (generated)
