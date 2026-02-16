@@ -1,6 +1,6 @@
-PWD c:\Users\rishi\.vscode\MIC\Medical-Image-Computing-Assignments-main\Assignment_2\Report
+PWD c:\Users\rishi\.vscode\MIC\Image_Reconstruction_mic\Report
 INPUT C:\Users\rishi\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\rishi\.vscode\MIC\Medical-Image-Computing-Assignments-main\Assignment_2\Report\Report.tex
+INPUT c:\Users\rishi\.vscode\MIC\Image_Reconstruction_mic\Report\Report.tex
 OUTPUT Report.log
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
@@ -114,9 +114,6 @@ INPUT C:\Program Files\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\Report.aux
-INPUT .\Report.aux
-INPUT Report.aux
 OUTPUT Report.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -126,12 +123,6 @@ INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\Report.out
-INPUT .\Report.out
-INPUT Report.out
-INPUT Report.out
-INPUT .\Report.out
-INPUT .\Report.out
 OUTPUT Report.out
 OUTPUT Report.pdf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
@@ -160,7 +151,6 @@ INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
 INPUT C:\Users\rishi\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
@@ -171,9 +161,69 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT .\Q1_Discrete_Radon_transform.png
+INPUT .\Q1_Discrete_Radon_transform.png
+INPUT .\Q1_Discrete_Radon_transform.png
+INPUT .\Q1_Discrete_Radon_transform.png
+INPUT .\Q1_Discrete_Radon_transform.png
+INPUT .\Q1_Discrete_Radon_transform.png
+INPUT .\Q1_Discrete_Radon_transform.png
+INPUT .\Q1_1D_radon_profile_theta0.png
+INPUT .\Q1_1D_radon_profile_theta0.png
+INPUT .\Q1_1D_radon_profile_theta0.png
+INPUT .\Q1_1D_radon_profile_theta0.png
+INPUT .\Q1_1D_radon_profile_theta0.png
+INPUT .\Q1_1D_radon_profile_theta0.png
+INPUT .\Q1_1D_radon_profile_theta0.png
+INPUT .\Q1_1D_radon_profile_theta90.png
+INPUT .\Q1_1D_radon_profile_theta90.png
+INPUT .\Q1_1D_radon_profile_theta90.png
+INPUT .\Q1_1D_radon_profile_theta90.png
+INPUT .\Q1_1D_radon_profile_theta90.png
+INPUT .\Q1_1D_radon_profile_theta90.png
+INPUT .\Q1_1D_radon_profile_theta90.png
+INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
+INPUT .\Q2_Filter_comparison.png
+INPUT .\Q2_Filter_comparison.png
+INPUT .\Q2_Filter_comparison.png
+INPUT .\Q2_Filter_comparison.png
+INPUT .\Q2_Filter_comparison.png
+INPUT .\Q2_Filter_comparison.png
+INPUT .\Q2_Filter_comparison.png
+INPUT .\Q2_original_vs_reconstruction.png
+INPUT .\Q2_original_vs_reconstruction.png
+INPUT .\Q2_original_vs_reconstruction.png
+INPUT .\Q2_original_vs_reconstruction.png
+INPUT .\Q2_original_vs_reconstruction.png
+INPUT .\Q2_original_vs_reconstruction.png
+INPUT .\Q2_original_vs_reconstruction.png
+INPUT .\Q2_RRMSE_Plot.png
+INPUT .\Q2_RRMSE_Plot.png
+INPUT .\Q2_RRMSE_Plot.png
+INPUT .\Q2_RRMSE_Plot.png
+INPUT .\Q2_RRMSE_Plot.png
+INPUT .\Q2_RRMSE_Plot.png
+INPUT .\Q2_RRMSE_Plot.png
+INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
+INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
+INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
+INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
+INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
+INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
+INPUT .\Q3_RRMSE_vs_starting_angle_chestCT.png
+INPUT .\Q3_Best_reconstruction_chestCT.png
+INPUT .\Q3_Best_reconstruction_chestCT.png
+INPUT .\Q3_Best_reconstruction_chestCT.png
+INPUT .\Q3_Best_reconstruction_chestCT.png
+INPUT .\Q3_Best_reconstruction_chestCT.png
+INPUT .\Q3_Best_reconstruction_chestCT.png
+INPUT .\Q3_Best_reconstruction_chestCT.png
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT Report.aux
 INPUT .\Report.out
 INPUT .\Report.out
+INPUT C:\Users\rishi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
+INPUT C:\Users\rishi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
@@ -190,9 +240,11 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb

@@ -11,7 +11,7 @@
 \usepackage{geometry}
 \usepackage{hyperref}
 \usepackage{enumitem}
-
+\hyphenpenalty = 10000
 \geometry{margin=1in}
 
 % --------------------
@@ -19,11 +19,14 @@
 % --------------------
 \title{\textbf{CS-736: Mathematical Imaging and Image Reconstruction}\\
 Assignment -- X-Ray Computed Tomography}
-\author{
-Arshit Singh\\
-\texttt{(Roll Number / Entry Number)}}
-\date{Instructor: Suyash P. Awate\\ \vspace{0.2cm} \today}
 
+\author{
+Rishith Gupta (23B1234)
+\\
+Shivam Chaubey (23B1244)
+}
+
+\date{\today}
 % --------------------
 \begin{document}
 \maketitle
@@ -100,11 +103,8 @@ For each pair $(t,\theta)$, numerical integration is performed along the corresp
 % ---------- FIGURE PLACEHOLDER ----------
 \begin{figure}[H]
 \centering
-\fbox{\parbox[c][6cm][c]{0.8\textwidth}{\centering
-\textbf{Placeholder: Radon transform (sinogram)}\\
-$\Delta s = 1.0$, $t \in [-90,90]$, $\theta \in [0,175]$
-}}
-\caption{Discrete Radon transform of the Shepp--Logan phantom.}
+\includegraphics[width=0.8\textwidth]{Q1_Discrete_Radon_transform.png}
+\caption{Discrete Radon transform (sinogram) of the Shepp--Logan phantom for $\Delta s = 1.0$, $t \in [-90,90]$, $\theta \in [0,175]$.}
 \label{fig:radon_basic}
 \end{figure}
 % --------------------------------------
@@ -119,47 +119,339 @@ Radon-transform images are computed for three different step sizes: $\Delta s = 
 For $\theta = 0^\circ$ and $\theta = 90^\circ$, the 1D Radon profiles computed with $\Delta s = 0.5$ appear the smoothest, while those computed with $\Delta s = 3.0$ appear the roughest due to undersampling along the integration direction.
 
 % ---------- FIGURE PLACEHOLDER ----------
+
+
 \begin{figure}[H]
 \centering
-\fbox{\parbox[c][6cm][c]{0.85\textwidth}{\centering
-\textbf{Placeholder: 1D Radon profiles}\\
-$\theta = 0^\circ$ and $90^\circ$ for different $\Delta s$
-}}
-\caption{Comparison of 1D Radon-transform profiles for different integration step sizes.}
-\label{fig:radon_1d}
+\includegraphics[width=0.8\textwidth]{Q1_1D_radon_profile_theta0.png}
+\caption{1D Radon-transform profiles for different integration step sizes for theta = 0}
+\label{fig:radon_basic}
 \end{figure}
-% --------------------------------------
 
-\paragraph{2D Radon-transform images.}
-The Radon-transform image corresponding to $\Delta s = 0.5$ is the smoothest, while the image corresponding to $\Delta s = 3.0$ shows visible artifacts and loss of detail.
-
-% ---------- FIGURE PLACEHOLDER ----------
 \begin{figure}[H]
 \centering
-\fbox{\parbox[c][6cm][c]{0.9\textwidth}{\centering
-\textbf{Placeholder: Radon images for}\\
-$\Delta s = 0.5,\; 1.0,\; 3.0$
-}}
-\caption{Effect of integration step size on the Radon-transform image.}
-\label{fig:radon_ds}
+\includegraphics[width=0.8\textwidth]{Q1_1D_radon_profile_theta90.png}
+\caption{1D Radon-transform profiles for different integration step sizes for theta = 90}
+\label{fig:radon_basic}
 \end{figure}
-% --------------------------------------
-
 % ------------------------------------------------------------
 \subsection*{(d) CT Scanner Parameter Design}
 % ------------------------------------------------------------
 
-In designing an X-ray CT scanner, smaller values of $\Delta t$ and $\Delta \theta$ are preferred to ensure dense spatial and angular sampling. Smaller $\Delta t$ improves spatial resolution, while smaller $\Delta \theta$ reduces angular undersampling artifacts. However, smaller values increase acquisition time, radiation dose, and storage requirements, leading to a trade-off between image quality and practical constraints.
+In designing an X-ray CT scanner, both $\Delta t$ (detector spacing) and $\Delta \theta$ (angular spacing) must be chosen carefully to balance reconstruction accuracy and practical constraints.
 
+A smaller $\Delta t$ increases the number of detector samples per projection, which improves spatial resolution and allows finer anatomical structures to be resolved. However, decreasing $\Delta t$ increases detector hardware complexity, data size, and acquisition time. Conversely, a very large $\Delta t$ leads to undersampling in the spatial domain, resulting in loss of detail and reconstruction artifacts.
+
+Similarly, a smaller $\Delta \theta$ increases angular sampling density, which improves reconstruction quality by reducing angular aliasing artifacts. If $\Delta \theta$ is too large, insufficient angular coverage causes streak artifacts and inaccurate reconstruction. However, reducing $\Delta \theta$ increases scan time and radiation exposure, which is undesirable in practical medical imaging.
+
+Based on sampling theory and our estimates, moderate values such as $\Delta t \approx 2$ pixel width and $\Delta \theta \approx 3^\circ$–$5^\circ$ provide a good trade-off between reconstruction accuracy and acquisition efficiency. Extremely small values provide diminishing returns while significantly increasing scan time and radiation dose.
 % ------------------------------------------------------------
 \subsection*{(e) ART Reconstruction Considerations}
 % ------------------------------------------------------------
 
-\paragraph{Choice of pixel grid.}
-The pixel size should be chosen small enough to capture anatomical details but large enough to avoid an excessively ill-conditioned reconstruction problem.
+\paragraph{Choice of number of pixels and pixel size.}
 
-\paragraph{Effect of $\Delta s$.}
-Choosing $\Delta s \gg 1$ pixel width leads to inaccurate ray–pixel interactions and degraded reconstructions, while choosing $\Delta s \ll 1$ pixel width improves accuracy but increases computational cost with diminishing returns.
+The number of pixels and pixel size determine the resolution and conditioning of the reconstruction problem. A smaller pixel size (larger number of pixels) improves spatial resolution and allows finer anatomical structures to be reconstructed. However, increasing the number of pixels also increases the number of unknowns in the reconstruction, which makes the system matrix larger and more ill-conditioned. This increases computational cost and slows convergence of iterative reconstruction methods such as ART. Therefore, the pixel size should be chosen to match the resolution of the measurement system, avoiding unnecessarily fine grids that increase computational burden without improving reconstruction quality.
+
+\paragraph{Effect of choosing $\Delta s \gg 1$ pixel width and $\Delta s \ll 1$ pixel width.}
+
+The parameter $\Delta s$ controls the sampling resolution along each projection ray.
+
+If $\Delta s \gg 1$ pixel width, the ray is sampled too coarsely, which leads to inaccurate estimation of the interaction between rays and pixels. This results in errors in the system matrix and degrades reconstruction accuracy. Such coarse sampling can also cause instability and slower convergence in ART.
+
+If $\Delta s \ll 1$ pixel width, the ray is sampled very finely, which improves the accuracy of the system matrix and leads to more precise reconstruction. However, very small $\Delta s$ significantly increases computational cost without providing substantial improvement beyond a certain point. This was observed in our experiments, where reducing $\Delta s$ improved smoothness initially but provided diminishing returns for very small values.
+
+Therefore, choosing $\Delta s$ approximately equal to the pixel width provides a good balance between reconstruction accuracy and computational efficiency.
+% ============================================================
 
 % ============================================================
+\section*{Question 2: X-Ray Computed Tomography -- Reconstruction by Filtered Backprojection}
+% ============================================================
+
+\subsection*{Objective}
+
+The objective of this problem is to reconstruct an image from its Radon transform using filtered backprojection (FBP) and to study the effects of different reconstruction filters and image blurring on reconstruction accuracy. The Shepp--Logan phantom of size $128 \times 128$ is used as the ground-truth image, with the coordinate origin located at the center pixel.
+
+% ------------------------------------------------------------
+\subsection*{(a) Reconstruction using Different Filters}
+% ------------------------------------------------------------
+
+The Radon transform of the Shepp--Logan phantom was computed using projection angles $\theta = 0^\circ, 3^\circ, 6^\circ, \ldots, 177^\circ$. The filtered backprojection method was then applied to reconstruct the image.
+
+Three different reconstruction filters were implemented in the Fourier domain:
+
+\begin{itemize}
+\item \textbf{Ram-Lak filter:} This filter preserves all frequencies equally and provides high spatial resolution but is sensitive to noise.
+\item \textbf{Shepp--Logan filter:} This filter modifies the Ram-Lak filter by attenuating high frequencies using a sinc function, reducing noise amplification.
+\item \textbf{Cosine filter:} This filter further suppresses high-frequency components, resulting in smoother reconstructions with reduced noise but slightly lower spatial resolution.
+\end{itemize}
+
+Each filter was applied using two cutoff frequencies:
+
+\[
+L = \omega_{\max}, \quad L = \frac{\omega_{\max}}{2}
+\]
+
+where $\omega_{\max}$ is the maximum frequency in the discrete Fourier representation.
+
+\paragraph{Effect of different filters and cutoff frequencies.}
+
+The Ram-Lak filter produces the sharpest reconstruction, as it fully preserves high-frequency components. However, it is more sensitive to noise. The Shepp--Logan and Cosine filters produce smoother reconstructions due to attenuation of high-frequency components.
+
+Reducing the cutoff frequency to $\omega_{\max}/2$ results in smoother images but also causes slight blurring due to loss of high-frequency information. This demonstrates the trade-off between spatial resolution and noise suppression.
+
+% ---------- FIGURE PLACEHOLDER ----------
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Q2_Filter_comparison.png}
+\caption{Reconstructed images using Ram-Lak, Shepp--Logan, and Cosine filters with cutoff frequencies $L = \omega_{\max}$ and $L = \omega_{\max}/2$.}
+\label{fig:q2_filters}
+\end{figure}
+% --------------------------------------
+
+% ------------------------------------------------------------
+\subsection*{(b) Effect of Image Blurring on Reconstruction}
+% ------------------------------------------------------------
+
+Blurred versions of the Shepp--Logan phantom were generated using Gaussian convolution with two different standard deviations:
+
+\begin{itemize}
+\item $S_0$: Original image (no blur)
+\item $S_1$: Mild blur using Gaussian filter with $\sigma = 1$
+\item $S_5$: Strong blur using Gaussian filter with $\sigma = 5$
+\end{itemize}
+
+The Radon transform was computed for each case, followed by Ram-Lak filtering with cutoff frequency $L = \omega_{\max}$ and backprojection.
+
+\paragraph{Effect of blur on reconstruction accuracy.}
+
+As the blur level increases, fine image details are progressively lost. The reconstructed image corresponding to the unblurred phantom ($S_0$) has the highest fidelity, while the reconstruction corresponding to $S_5$ appears the smoothest but lacks fine structural details.
+
+The relative root-mean-squared error (RRMSE) was computed between each ground-truth image and its reconstruction. The RRMSE was lowest for $S_0$ and highest for $S_5$, since blur removes high-frequency information that cannot be recovered during reconstruction.
+
+% ---------- FIGURE PLACEHOLDER ----------
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Q2_original_vs_reconstruction.png}
+\caption{Original vs Reconstructed versions of the Shepp--Logan phantom: $S_0$, $S_1$, and $S_5$.}
+\label{fig:q2_blur}
+\end{figure}
+% --------------------------------------
+
+\paragraph{RRMSE comparison.}
+
+The computed RRMSE values for the three cases are:
+\[
+\text{RRMSE}(S_0, R_0) = 0.6529,
+\quad
+\text{RRMSE}(S_1, R_1) = 0.6612,
+\quad
+\text{RRMSE}(S_5, R_5) = 0.7383.
+\]
+
+Thus, the lowest reconstruction error occurs for the unblurred image $S_0$, while the highest reconstruction error occurs for the most blurred image $S_5$:
+
+\[
+\text{RRMSE}(S_0, R_0)
+<
+\text{RRMSE}(S_1, R_1)
+<
+\text{RRMSE}(S_5, R_5).
+\]
+
+This behavior can be explained theoretically using frequency-domain analysis. Image blur acts as a low-pass filter that removes high-frequency components corresponding to sharp edges and fine structural details. The Ram-Lak filter used in filtered backprojection attempts to restore high-frequency components during reconstruction. However, when the original image is blurred, these high-frequency components are permanently lost and cannot be recovered. As a result, reconstruction accuracy decreases and RRMSE increases with increasing blur.
+
+Therefore, reconstruction accuracy is highest for the original image and decreases progressively as the level of blur increases.
+% ------------------------------------------------------------
+\subsection*{(c) Effect of Cutoff Frequency on Reconstruction Error}
+% ------------------------------------------------------------
+
+The reconstruction error was evaluated as a function of cutoff frequency $L$, where
+
+\[
+L = \frac{\omega_{\max}}{50}, \frac{2\omega_{\max}}{50}, \ldots, \omega_{\max}
+\]
+
+For each blur level, the Ram-Lak filter was applied using different cutoff frequencies, and the corresponding RRMSE values were computed.
+
+\paragraph{Effect of cutoff frequency.}
+
+For small cutoff frequencies, reconstruction error is high due to excessive smoothing and loss of important frequency components. As the cutoff frequency increases, reconstruction accuracy improves because more frequency information is retained.
+
+However, beyond a certain cutoff frequency, improvements become marginal. This demonstrates the trade-off between frequency preservation and noise suppression.
+
+% ---------- FIGURE PLACEHOLDER ----------
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Q2_RRMSE_Plot.png}
+\caption{RRMSE as a function of cutoff frequency $L$ for different blur levels.}
+\label{fig:q2_rrmse}
+\end{figure}
+% --------------------------------------
+
+\paragraph{Summary of observations.}
+
+These results demonstrate that filtered backprojection effectively reconstructs images from projection data, and reconstruction quality depends strongly on filter choice, cutoff frequency, and image characteristics. The Ram-Lak filter provides the highest resolution, while other filters offer better noise suppression. Proper selection of filter parameters is essential for achieving optimal reconstruction performance.
+
+\newpage
+% ============================================================
+\section*{Question 3: X-Ray Computed Tomography -- Incomplete Data}
+% ============================================================
+
+\subsection*{Objective}
+
+The objective of this problem is to analyze the effect of incomplete angular sampling on reconstruction accuracy. In this scenario, projection data is acquired over only $151$ contiguous angles spanning $150^\circ$, instead of the full $180^\circ$. The reconstruction accuracy is evaluated for different starting angles using the relative root-mean-squared error (RRMSE). Two datasets were used: chestCT.mat and myPhantom.mat.
+
+% ------------------------------------------------------------
+\subsection*{(a) RRMSE as a Function of Starting Angle}
+% ------------------------------------------------------------
+
+For each dataset, reconstruction was performed using projection data acquired over the angular range:
+
+\[
+[\theta, \theta+1, \ldots, \theta+150], \quad \theta \in [0,1,\ldots,180].
+\]
+
+For each starting angle $\theta$, the Radon transform was computed over the corresponding angular range, followed by filtered backprojection to reconstruct the image. 
+
+The variation of reconstruction error as a function of starting angle $\theta$ is shown below.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Q3_RRMSE_vs_starting_angle_chestCT.png}
+\caption{RRMSE as a function of starting angle $\theta$ for the chestCT dataset.}
+\label{fig:q3_rrmse_chest}
+\end{figure}
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.8\textwidth]{Report/images/Q3/Q3_rrmse_myPhantom.png}
+% \caption{RRMSE as a function of starting angle $\theta$ for the myPhantom dataset.}
+% \label{fig:q3_rrmse_phantom}
+% \end{figure}
+
+The plots show that reconstruction accuracy varies with the starting angle. Certain angular ranges provide better coverage of important structural information, resulting in lower reconstruction error.
+
+% ------------------------------------------------------------
+\subsection*{(b) Optimal Angle Range and Reconstruction}
+% ------------------------------------------------------------
+
+For each dataset, the starting angle $\theta$ corresponding to the minimum RRMSE was identified. The reconstructed images using these optimal angular ranges are shown below.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Q3_Best_reconstruction_chestCT.png}
+\caption{Best reconstruction of the chestCT dataset using the optimal angular range that minimizes RRMSE.}
+\label{fig:q3_best_chest}
+\end{figure}
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.8\textwidth]{Report/images/Q3/Q3_best_reconstruction_myPhantom.png}
+% \caption{Best reconstruction of the myPhantom dataset using the optimal angular range that minimizes RRMSE.}
+% \label{fig:q3_best_phantom}
+% \end{figure}
+
+For each dataset, the contiguous set of 151 angles corresponding to the minimum RRMSE should be selected for acquisition, as this range provides the most informative projections for accurate reconstruction.
+
+\newpage
+% ============================================================
+\section*{Question 4: Algebraic Reconstruction Technique (ART)}
+% ============================================================
+
+\subsection*{Objective}
+
+The objective of this problem is to reconstruct an image using the Algebraic Reconstruction Technique (ART) from projection data acquired over $180$ angles spanning $180^\circ$. The projection data is corrupted with additive zero-mean Gaussian noise with a standard deviation equal to $5\%$ of the intensity range. The system matrix representing the Radon transform was constructed from scratch using ray–pixel intersection geometry, and ART was used to iteratively reconstruct the image.
+
+% ------------------------------------------------------------
+\subsection*{(a) ART Reconstruction}
+% ------------------------------------------------------------
+
+Let the imaging system be represented as:
+
+\[
+Ax = b,
+\]
+
+where $x$ is the vectorized image, $b$ is the measured projection data, and $A$ is the system matrix constructed from ray–pixel interactions.
+
+The ART update equation for iteration $k$ and projection $i$ is given by:
+
+\[
+x^{(k+1)}
+=
+x^{(k)}
++
+\lambda
+\frac{b_i - a_i x^{(k)}}{\|a_i\|^2}
+a_i^T,
+\]
+
+where:
+
+\begin{itemize}
+\item $a_i$ is the $i$-th row of the system matrix,
+\item $\lambda$ is the step-length parameter,
+\item the initial estimate $x^{(0)}$ is set to zero.
+\end{itemize}
+
+Projection data was generated using angles:
+
+\[
+\theta = 0^\circ, 1^\circ, 2^\circ, \ldots, 179^\circ,
+\]
+
+and Gaussian noise with standard deviation equal to $5\%$ of the intensity range was added to simulate realistic acquisition conditions.
+
+The reconstructed image obtained using ART is shown below.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Report/images/Q4/Q4_ART_reconstruction.png}
+\caption{Reconstructed image using ART with noisy projection data.}
+\label{fig:q4_art_reconstruction}
+\end{figure}
+
+The reconstruction successfully recovers the overall structure of the image despite the presence of noise, demonstrating the robustness of ART.
+
+% ------------------------------------------------------------
+\subsection*{(b) Convergence Behavior and Effect of Step-Length}
+% ------------------------------------------------------------
+
+The reconstruction error was evaluated using the relative root-mean-squared error (RRMSE):
+
+\[
+\text{RRMSE}(x, \hat{x})
+=
+\frac{
+\sqrt{\sum_p (x(p) - \hat{x}(p))^2}
+}{
+\sqrt{\sum_p x(p)^2}
+}.
+\]
+
+The RRMSE was computed as a function of iteration number for different step-length values:
+
+\[
+\lambda = 0.1, 0.2, \ldots, 1.0.
+\]
+
+The convergence behavior is shown below.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Report/images/Q4/Q4_RRMSE_vs_iteration.png}
+\caption{RRMSE as a function of iteration number for different values of step-length $\lambda$.}
+\label{fig:q4_rrmse}
+\end{figure}
+
+\paragraph{Effect of step-length parameter.}
+
+Smaller values of $\lambda$ result in slow but stable convergence, while larger values produce faster initial convergence but may cause instability or oscillations due to overshooting. Moderate values of $\lambda$ provide the best balance between convergence speed and stability.
+
+\paragraph{Interpretation.}
+
+ART iteratively refines the reconstruction by enforcing consistency with individual projection measurements. As the number of iterations increases, the reconstruction error decreases and the reconstructed image approaches the ground truth. However, due to measurement noise and discretization errors, convergence eventually stabilizes at a non-zero error level.
+
+These results demonstrate that ART is an effective iterative reconstruction method and that appropriate selection of the step-length parameter is critical for achieving optimal reconstruction performance.
 \end{document}
